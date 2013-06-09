@@ -1,0 +1,4 @@
+#slidecontainer { width:100%; background:rgba(0, 0, 0, 0.8); text-align:center; }
+#tinyslides { padding:5px 0 0 0; width:100%; background:rgba(0, 0, 0, 1); text-align:center; }
+#prev_slide { float:left; height:50px; width:auto; }
+#next_slide { float:right; height:50px; width:auto; }
