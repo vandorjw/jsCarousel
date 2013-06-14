@@ -10,9 +10,9 @@
  * https://raw.github.com/jquery/jquery/master/MIT-LICENSE.txt
  */
  
- if ( typeof jQueryCarousel === "undefined" ){
+if ( typeof jQueryCarousel === "undefined" ){
 
-	var jQueryCarousel = (function() {};
+var jQueryCarousel = (function() {
 
 	/*
 	 *  Private Variables
@@ -27,8 +27,8 @@
 	 * 
 	 * */
 
-	var directionOfRotarion = 0;	 //Clockwise:0 ; CounterClockWise:1
-	var rotationIntervalTime = 5000; //Time in Microseconds
+	var directionOfRotarion = 0; //Clockwise:0 ; CounterClockWise:1
+	var intervalTime = 5000; // time in Microseconds (5 sec default)
 
 	/**
 	 * -------------------APPLICATION INITIALIZERS --------------------
@@ -39,9 +39,10 @@
 	 * 
 	 * */
 
-	var slides = $(".slide");
+	//var slides = $(".slide");
+	var slides = $('.slide');
 	var pslides = $('.pslide');
-	var numSlides = slides.length;
+	var ns = slides.length;
 	var displayQueue = {
 		prev:0,
 		curr:0,
@@ -54,24 +55,29 @@
 
 	function hideSlides () {
 		//First hide the slides
-		slides[displayQueue["prev"].hide();
-		slides[displayQueue["curr"].hide();
-		slides[displayQueue["next"].hide();
+		$(slides[displayQueue["prev"]]).hide();
+		$(slides[displayQueue["curr"]]).hide();
+		$(slides[displayQueue["next"]]).hide();
 		//then remove their id's
-		slides[displayQueue["prev"].attr("id", " ");
-		slides[displayQueue["curr"].attr("id", " ");
-		slides[displayQueue["next"].attr("id", " ");
+		$(slides[displayQueue["prev"]]).attr("id", " ");
+		$(slides[displayQueue["curr"]]).attr("id", " ");
+		$(slides[displayQueue["next"]]).attr("id", " ");
 	}
 
 	function showSlides () {
 		//First first set the id's
-		slides[displayQueue["prev"].attr("id", "prev_slide");
-		slides[displayQueue["curr"].attr("id", 'curr_slide');
-		slides[displayQueue["next"].attr("id", 'next_slide');
+		console.log("Debug - slide prev: " + $(slides[displayQueue["prev"]]).src);
+		console.log("Debug - slide curr: " + $(slides[displayQueue["curr"]]).src);
+		console.log("Debug - slide next: " + $(slides[displayQueue["next"]]).src);
+		
+		
+		$(slides[displayQueue["prev"]]).attr("id", "prev_slide");
+		$(slides[displayQueue["curr"]]).attr("id", 'curr_slide');
+		$(slides[displayQueue["next"]]).attr("id", 'next_slide');
 		//then show the slides
-		slides[displayQueue["prev"].show();
-		slides[displayQueue["curr"].show();
-		slides[displayQueue["next"].show();
+		$(slides[displayQueue["prev"]]).show();
+		$(slides[displayQueue["curr"]]).show();
+		$(slides[displayQueue["next"]]).show();
 	}
 
 	function updateDisplayQueue () {
@@ -91,30 +97,42 @@
 	return {
 
 		init: function () {
-		
-			//Figure out what needs to be displayed.
-			this.updateDisplayQueue();
-			
+
+			console.log("::Start Init::");
+			console.log("init should be aware of the following variables:");
+			console.log("ns : " + ns);
+			console.log("intervalTime: " + intervalTime);
+			console.log("slides: " + slides);
+
+			updateDisplayQueue();
+
 			//Hide all the slide exept
-			for (var i = 0; i < this.num_slides; i++) {
-				this.slides[i].hide();
+			for (var i = 0; i < ns; i++) {
+				console.log("Init debug, beging listing slide source.");
+				console.log(slides[i].src);
+				slides[i].hide();
 			}
 			
-			this.showSlides();
+			showSlides();
 			//call play
+			console.log("::End Init::");
 		},
 		
 		play : function () {
-
+			// copy this to that to make it available to inner functions
 			var that = this;
 			
+			//debugging statement
 			console.log(that);
 			
+			//loop every 'intervalTime' microseconds
 			setInterval(function () {
+				//discover a method to "break out"
 				that.hideSlides();
 				that.updateDisplayQueue();
 				that.showSlides();
-			}, that.rotationIntervalTime);
+			}, that.intervalTime);
+		},
 		
 		pause: function () {
 			//pass
@@ -129,5 +147,9 @@
 		}
 		
 	};
-}()); // end jQueryCarousel
+}()); 	// end jQueryCarousel
 
+//run!
+jQueryCarousel.init();
+
+}	// end if
