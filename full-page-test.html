@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+    <title>jsCarousel</title>
+    <link rel="stylesheet" href="css/jsCarousel.css" type="text/css" />
+    <script type="text/javascript" src="js/jsCarousel-0.1.js"></script>
+</head>
+
+<body role="document">
+
+<header id="masthead" class="minor new-menu">
+    <div class="container">
+
+        <div id="branding">
+            <div id="logo">
+                <a href="https://developer.mozilla.org/en-US/">
+                    <img src="img/mdn-logo-sm.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="62" height="71">
+                    jsCarousel
+                </a>    
+            </div>
+        </div>
+        
+        <nav id="nav">
+            <ul id="nav-main" role="menubar">
+            
+                <li id="nav-main-docs" class="menu" rel="menuitem">
+                    <a href="#NAVholder01" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-01" title="BigHolder 01">Nav-Holder 01</a>
+                    <div id="nav-sub-01" class="sub-menu" aria-hidden="true">
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li><a href="#01">placeholder 01</a></li>
+                                    <li><a href="#02">placeholder 02</a></li>
+                                    <li><a href="#03">placeholder 03</a></li>
+                                    <li><a href="#04">placeholder 04</a></li>
+                                    <li><a href="#05">placeholder 05</a></li>
+                                    <li><a href="#06">placeholder 06</a></li>
+                                    <li><a href="#07">placeholder 07</a></li>
+                                    <li><a href="#08">placeholder 08</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li id="nav-main-apps" role="menuitem">
+                    <a href="#NAVholder02">Nav-Holder 02</a>
+                </li>
+                
+                <li id="nav-main-firefox" class="menu" role="menuitem">
+                    <a href="#NAVholder03" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-03">Nav-Holder 03</a>
+                    <ul id="nav-sub-03" class="sub-menu">
+                        <li><a href="#01">placeholder 01</a></li>
+                        <li><a href="#02">placeholder 02</a></li>
+                        <li><a href="#03">placeholder 03</a></li>
+                        <li><a href="#04">placeholder 04</a></li>
+                    </ul>
+                </li>
+                
+                <li id="nav-main-demos" role="menuitem">
+                    <a href="NAVholder04" class="demos">BigHolder 04</a>
+                </li>
+                
+                <li id="nav-main-community" class="menu" role="menuitem">
+                    <a href="#NAVholder05" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-05">Nav-Holder 05</a>
+                    <ul id="nav-sub-05" class="sub-menu">
+                        <li><a href="#01">placeholder 01</a></li>
+                        <li><a href="#01">placeholder 02</a></li>
+                        <li><a href="#01">placeholder 03</a></li>
+                        <li><a href="#01">placeholder 04</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="content">
+    <div class="container">
+    <article class="article" role="main" 
+          data-current-revision="1"
+          data-refresh-message="Your changes were merged. However, something else has been edited, so this page will be refreshed to reflect the changes."
+          data-cancel-edit-message="Abort editing in progress? Your unsaved changes will be discarded.">
+          
+        <header id="article-head">
+        
+            <span class="title">
+                <h1 class="page-title">Disclaimer:</h1>
+            </span>
+            
+            <p><em>This page no association with MDN. I only borrowed some of their code & ideas to test the integration of the Carousel in a full page.</em></p>
+           
+            <span class="title">
+                <h1 class="page-title">Feature List:</h1>
+            </span>
+           
+            <p>The Carousel is still lacking many features and still has many bugs. A list of items I plan to implement are:
+            <ul id="featurelist">
+                <li>Zoom image and pause on click</li>
+                <li>Browser width detection</li>
+                <li>Proper pagination</li>
+                <li>Pause/Start</li>
+                <li>Fix flash of Content during intial load</li>
+                <li>Touch events, swiping left and right</li>
+                <li>Allow less than 3 images</li>
+                <li>Smooth the transition</li>
+            </ul>
+            </p>
+            
+            <p>All styling is done using css. The only "style" applied via javascript, is changing the display from "none" to "inline"</p>
+            
+        </header>
+    </article>
+    
+    <article>      
+        <div id="slidescontainer">
+            <a href="#0" title="0"><img class="jsCarousel-slide" src="http://placehold.it/350x150/f00" /></a>
+            <a href="#1" title="1"><img class="jsCarousel-slide" src="http://placehold.it/350x150/0f0" /></a>
+            <a href="#2" title="2"><img class="jsCarousel-slide" src="http://placehold.it/350x150/00f" /></a>
+            <a href="#3" title="3"><img class="jsCarousel-slide" src="http://placehold.it/350x150/ff0" /></a>
+            <a href="#4" title="4"><img class="jsCarousel-slide" src="http://placehold.it/350x150/f0f" /></a>
+            <a href="#5" title="5"><img class="jsCarousel-slide" src="http://placehold.it/350x150/0ff" /></a>
+        </div>
+
+        <div id="slidespagination"> 
+            <a href="#0" title="0"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/f00" /></a>
+            <a href="#1" title="1"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/0f0" /></a>
+            <a href="#2" title="2"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/00f" /></a>
+            <a href="#3" title="3"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/ff0" /></a>
+            <a href="#4" title="4"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/f0f" /></a>
+            <a href="#5" title="5"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/0ff" /></a>
+        </div>
+    </article>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>
+        <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
+            <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">&copy;</span>
+        <!--[if lte IE 8]></span><![endif]-->
+        jsCarousel</p>
+    </div>
+</footer>
+    
+</body>
+</html>

@@ -1,4 +1,429 @@
-#slidescontainer { width:100%; background:rgba(0, 0, 0, 0.8); text-align:center; }
-#slidespagination { padding:5px 0 0 0; width:100%; background:rgba(0, 0, 0, 1); text-align:center; }
-#prev_slide { float:left; height:50px; width:auto; }
-#next_slide { float:right; height:50px; width:auto; }
+@font-face{
+    font-family:"League Gothic";
+    src:url('../fonts/League_Gothic/League_Gothic-webfont.eot');
+    src:url('../fonts/League_Gothic/League_Gothic-webfont.eot?') format('eot'),
+        url('../fonts/League_Gothic/League_Gothic-webfont.woff') format('woff'),
+        url('../fonts/League_Gothic/League_Gothic-webfont.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+   
+@font-face{
+    font-family:"Bebas Neue";
+    src:url('../fonts/Bebas_Neue/BebasNeue-webfont.eot');
+    src:url('../fonts/Bebas_Neue/BebasNeue-webfont.eot?') format('eot'),
+        url('../fonts/Bebas_Neue/BebasNeue-webfont.woff') format('woff'),
+        url('../fonts/Bebas_Neue/BebasNeue-webfont.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+   
+@font-face{
+    font-family:"Carto Bold";
+    src:url('../fonts/Carto_Bold/CartoGothicStd-Bold-webfont.eot');
+    src:url('../fonts/Carto_Bold/CartoGothicStd-Bold-webfont.eot?') format('eot'),
+        url('../fonts/Carto_Bold/CartoGothicStd-Bold-webfont.woff') format('woff'),
+        url('../fonts/Carto_Bold/CartoGothicStd-Bold-webfont.ttf') format('truetype');
+    font-weight:bold;
+    font-style:normal;
+}
+@font-face{
+    font-family:"Milk";
+    src:url('../fonts/Milk/ABTSmilk.eot');
+    src:url('../fonts/Milk/ABTSmilk.eot?') format('eot'),
+        url('../fonts/Milk/ABTSmilk.woff') format('woff'),
+        url('../fonts/Milk/ABTSmilk.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face{
+    font-family:"Museo Sans";
+    src:url('../fonts/Museo_Sans/MuseoSans_500-webfont.eot');
+    src:url('../fonts/Museo_Sans/MuseoSans_500-webfont.eot?') format('eot'),
+        url('../fonts/Museo_Sans/MuseoSans_500-webfont.woff') format('woff'),
+        url('../fonts/Museo_Sans/MuseoSans_500-webfont.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face{
+    font-family:'MozTT';
+    font-weight:200;
+    src:url('../fonts/MozTT/MozTT-light-webfont.eot');
+    src:url('../fonts/MozTT/MozTT-light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MozTT/MozTT-light-webfont.woff') format('woff'),
+        url('../fonts/MozTT/MozTT-light-webfont.ttf') format('truetype'),
+        url('../fonts/MozTT/MozTT-light-webfont.svg#mozttlight') format('svg');
+}
+@font-face{
+    font-family:'MozTT';
+    src:url('../fonts/MozTT/MozTT-regular-webfont.eot');
+    src:url('../fonts/MozTT/MozTT-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MozTT/MozTT-regular-webfont.woff') format('woff'),
+        url('../fonts/MozTT/MozTT-regular-webfont.ttf') format('truetype'),
+        url('../fonts/MozTT/MozTT-regular-webfont.svg#mozttregular') format('svg');
+}
+@font-face{
+    font-family:'MozTT';
+    font-weight:600;
+    src:url('../fonts/MozTT/MozTT-medium-webfont.eot');
+    src:url('../fonts/MozTT/MozTT-medium-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MozTT/MozTT-medium-webfont.woff') format('woff'),
+        url('../fonts/MozTT/MozTT-medium-webfont.ttf') format('truetype'),
+        url('../fonts/MozTT/MozTT-medium-webfont.svg#mozttmedium') format('svg');
+}
+header,
+hgroup,
+nav,
+section,
+article,
+aside,
+footer,
+figure,
+details,
+summary{
+    display:block;
+}
+html,
+body,
+form,
+fieldset,
+legend,
+figure,
+h1,h2,h3,h4,h5,h6,
+dt,dd{
+    margin:0;
+    padding:0;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after{
+    content:"";
+}
+blockquote,q{
+    quotes:"" "";
+}
+fieldset,a img{
+    border:0;
+}
+address,caption,cite,code,dfn,th,var{
+    font-style:inherit;
+    font-weight:inherit;
+}
+abbr,acronym,dfn{
+    border-bottom:1px dotted #666;
+    font-variant:normal;
+    cursor:help;
+}
+input,button,textarea,select,optgroup,option{
+    font-family:inherit;
+    font-size:inherit;
+    font-style:inherit;
+    font-weight:inherit;
+}
+textarea{
+    -webkit-appearance:textfield;
+    -moz-appearance:textfield;
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+    margin:0 0 1.286em;
+}
+caption,th{
+    text-align:left;
+}
+p,pre,blockquote,dl,ul,ol{
+    margin:0 0 1.286em;
+    padding:0;
+}
+p{
+    line-height:1.5em;
+}
+li ul,li ol{
+    margin-bottom:0;
+}
+ul{
+    list-style:none;
+}
+legend{
+    color:inherit;
+}
+dt{
+    font-style:italic;
+}
+dd{
+    margin:0 0 .5em 22px;
+}
+form ol,form ul{
+    list-style:none;
+    margin:0 0 1.286em;
+}
+
+abbr.updated,abbr.published{
+    border:0;
+    cursor:default;
+}
+
+html{
+    background:#f6f6f1 url("../img/bg-content.png") fixed;
+}
+body{
+    min-height:400px;
+    font:
+        14px/1.286 "Lucida Grande",
+        "Lucida Sans Unicode",
+        "DejaVu Sans",
+        Lucida,
+        Arial,
+        Helvetica,
+        sans-serif;
+    margin:0 auto;
+    color:#333;
+}
+:link{
+    color:#369;
+    text-decoration:none;
+}
+:visited{
+    color:#69c;
+    text-decoration:none;
+}
+:link:hover,:link:focus,:link:active{
+    color:#25a;
+    text-decoration:underline;
+}
+:visited:hover,:visited:focus,:visited:active{
+    color:#25a;
+    text-decoration:underline;
+}
+a.go:after{
+    content:"\00A0\000BB";
+    font:1.3em Georgia,Times,"Times New Roman",serif;
+}
+
+.container{
+    position:relative;
+    width:940px;
+    padding:0 10px;
+    margin:0 auto;
+}
+.container:after{
+    content:".";
+    display:block;
+    clear:both;
+    height:0;
+    visibility:hidden;
+}
+#content{
+    min-height:400px;
+}
+#content .container{
+    padding-bottom:1em;
+}
+
+.title{
+    line-height:50px;
+    font-size:1.3em;
+    font-family: "League Gothic","Arial Narrow",Arial,Helvetica,sans-serif;
+}
+#masthead{
+    background:#000 url("../img/bg-pinstripe.png") center top repeat-x;
+    color:#ccc;
+    min-height:70px;
+    -moz-box-shadow:0 1px 0 rgba(0,0,0,.25);
+    -webkit-box-shadow:0 1px 0 rgba(0,0,0,.25);
+    box-shadow:0 1px 0 rgba(0,0,0,.25);
+}
+#masthead .container{
+    padding-top:55px;
+    background:#000 url("../img/bg-pinstripe.png") center top repeat-x;
+}
+#branding{
+    position:absolute;
+    left:10px;
+    top:10px;
+    width:50%;
+    padding:2px 0 0 70px;
+    margin:0 0 10px;
+}
+
+#nav{
+    float:left;
+    margin:0 0 6px 70px;
+    font:200 18px/1 "Bebas Neue","League Gothic","Arial Narrow",Arial,Helvetica,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+#nav:after{
+    content:".";
+    display:block;
+    clear:both;
+    height:0;
+    visibility:hidden;
+}
+#nav a{
+    color:#ccc;
+}
+#nav a:hover,#nav a:focus,#nav a:active{
+    color:#fff;
+    outline:0;
+}
+#nav-main{
+    float:right;
+    margin:0;
+}
+#nav-main li{
+    position:relative;
+    display:inline-block;
+    margin:0 12px -6px 0;
+}
+#nav-main a{
+    display:inline-block;
+    height:18px;
+    padding-bottom:9px;
+    background:url("../img/nav-arrows.png") center bottom no-repeat;}
+    #nav-main a:hover,
+    #nav-main a:focus,
+    #nav-main a:active{
+    text-decoration:none;
+    padding-bottom:8px;
+    border-bottom:1px solid #000;
+}
+#nav-main .sub-menu a{
+    display:inline;
+    height:auto;
+    padding:0;
+    background:none;
+}
+#nav-main .sub-menu a:hover,
+#nav-main .sub-menu a:focus,
+#nav-main .sub-menu a:active{
+    padding:0;
+    border:0;
+}
+#nav-main .toggle{
+    position:relative;
+    z-index:99;
+    padding-right:12px;
+    margin-right:-12px;
+}
+#nav-main .menu{
+    padding-right:12px;
+    background:url("../img/nav-arrows.png") right -545px no-repeat;
+}
+#nav-main .menu:hover{
+    background-position:right -645px;
+}
+
+#nav-main .menu{
+    padding:0 12px 0 0;
+    background:url("../img/nav-arrows.png") 100% -545px no-repeat;
+}
+#nav-main .menu:hover{
+    background-position:100% -595px;
+}
+#nav-main #nav-main-docs:hover{
+    background-position:100% -645px;
+}
+#nav-main #nav-main-community:hover{
+    background-position:100% -1145px;
+}
+#nav-main .menu .sub-menu{
+    position:absolute;
+    z-index:98;
+    left:-999em;
+    top:27px;
+    background:#000;
+    list-style:none;
+    width:200px; /* 90 old-style */
+    font-size:1em;
+    padding:10px 6px 4px;
+    text-align:center;
+    -moz-box-shadow:0 0 3px rgba(0,0,0,.5);
+    -webkit-box-shadow:0 0 3px rgba(0,0,0,.5);
+    box-shadow:0 0 3px rgba(0,0,0,.5);
+}
+#nav-main .menu .sub-menu li{
+    display:block;
+    float:none;
+    width:100%;
+    margin:0 0 .35em;
+}
+
+.hasJS #nav-main .menu .sub-menu,
+#nav-main .menu:hover .sub-menu{
+    left:50%;
+    margin-left:-55px;
+}
+.hasJS #nav-main .menu .sub-menu{
+    display:none;
+}
+#logo{
+    margin:0;
+    font:normal 32px/1 "Bebas Neue","League Gothic",Haettenschweiler,Impact,"Arial Narrow",sans-serif;
+    text-transform:uppercase;
+    color:#fff;
+    letter-spacing:1px;
+}
+#logo a{
+    color:#fff;
+    text-decoration:none;
+}
+#logo img{
+    position:absolute;
+    left:-3px;
+    top:-4px;
+}
+
+#slidescontainer {
+    width:100%;
+    text-align:center;
+    -moz-box-shadow:0 0 3px rgba(0,0,0,.5);
+    -webkit-box-shadow:0 0 3px rgba(0,0,0,.5);
+    box-shadow:0 0 3px rgba(0,0,0,.5);
+}
+
+.jsCarousel-slide{
+/* on-click, pause slideshow and zoom */
+}
+
+.jsCarousel-pslide{
+/* make into circles */ 
+}
+
+
+#slidespagination {
+    padding:5px 0 0 0;
+    width:100%;
+    text-align:center;
+}
+#prev_slide {
+    float:left;
+    height:100px;
+    width:auto;
+}
+#next_slide {
+    float:right;
+    height:100px;
+    width:auto;
+}
+
+footer{
+    background:#000 url("../img/bg-pinstripe.png") center top repeat-x;
+    text-align:center;
+}
+
+footer p{
+    margin:10px auto;
+    font-size:2em;
+    font-family: "League Gothic","Arial Narrow",Arial,Helvetica,sans-serif;
+    color:#fff;
+}
+
+ul#featurelist{
+    list-style:circle;
+    padding-left:10px;
+    margin-left: 10px;
+}
