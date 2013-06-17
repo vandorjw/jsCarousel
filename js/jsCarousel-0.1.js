@@ -70,18 +70,23 @@ var jsCarousel = (function() {
     }
 
     function updateDisplayQueue (newcurrent) {
-        if(typeof newcurrent === "number" && newcurrent >= 0 && newcurrent <= ns){
-            console.log("newcurrent: " + newcurrent);
-            displayQueue.curr = newcurrent;
-            console.log("displayQueue.curr: " + displayQueue.curr);
-        } 
-        else {
-            if( directionOfRotarion === 1){
+        // when passed as string , it is a possition 
+        if( typeof newcurrent === "string"){
+            displayQueue.curr = parseInt(newcurrent,10);
+        }
+        //when passed as number, it is direction of rotarion
+        else if( typeof newcurrent === "number"){
+            if( newcurrent === 1){
                 displayQueue.curr = displayQueue.next;
-                console.log("Forward Current: " + newcurrent);
             } else{
                 displayQueue.curr = displayQueue.prev;
-                console.log("Backwards Current: " + newcurrent);
+            }
+        }
+        else { 
+            if( directionOfRotarion === 1){
+                displayQueue.curr = displayQueue.next;
+            } else{
+                displayQueue.curr = displayQueue.prev;
             }
         }
         displayQueue.prev = (displayQueue.curr - 1 + ns) % ns;
@@ -92,7 +97,7 @@ var jsCarousel = (function() {
 
         init: function () {
             var i;
-            
+
             for (i = 0; i < ns; i=i+1) {
                 slides[i].style.display = "none";
             }
@@ -101,6 +106,7 @@ var jsCarousel = (function() {
         },
 
         play : function () {
+
             function playEvents() {
                 hideSlides();
                 updateDisplayQueue();
@@ -109,13 +115,31 @@ var jsCarousel = (function() {
             var i, timeout, player = setInterval(playEvents, intervalTime);
 
             document.body.onclick= function(evt){
-                evt=window.event? event.srcElement: evt.target;
-                if( evt.className && evt.className.indexOf('jsCarousel-pslide')!=-1){
+                evt=window.event ? evt.srcElement: evt.target;
+
+                if( evt.className.indexOf('jsCarousel-pslide')!=-1){
                     clearInterval(player);
                     hideSlides();
-                    updateDisplayQueue(parseInt(evt.alt,10));
+                    updateDisplayQueue(evt.alt);
                     showSlides();
                     player = setInterval(playEvents, intervalTime);
+                }
+                else if( evt.id==="jsCarousel-next"){
+                   clearInterval(player);
+                    hideSlides();
+                    updateDisplayQueue(1);
+                    showSlides();
+                    player = setInterval(playEvents, intervalTime);
+                }
+                else if( evt.id==="jsCarousel-prev"){
+                    clearInterval(player);
+                    hideSlides();
+                    updateDisplayQueue(0);
+                    showSlides();
+                    player = setInterval(playEvents, intervalTime);
+                }
+                else{
+                    //do nothing
                 }
             }
         }
@@ -123,9 +147,6 @@ var jsCarousel = (function() {
 }());
 jsCarousel.init();
 jsCarousel.play();
-
-pslides = document.getElementsByClassName('jsCarousel-pslide');
-pslides[0].click();
 }
 };
 

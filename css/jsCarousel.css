@@ -427,3 +427,6 @@ ul#featurelist{
     padding-left:10px;
     margin-left: 10px;
 }
+.featureCompleted{
+    text-decoration: line-through;
+}

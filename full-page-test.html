@@ -101,7 +101,7 @@
             <ul id="featurelist">
                 <li>Zoom image and pause on click</li>
                 <li>Browser width detection</li>
-                <li>Proper pagination</li>
+                <li class="featureCompleted" >Proper pagination</li>
                 <li>Pause/Start</li>
                 <li>Fix flash of Content during intial load</li>
                 <li>Touch events, swiping left and right</li>
@@ -125,13 +125,22 @@
             <a href="#5" title="5"><img class="jsCarousel-slide" src="http://placehold.it/350x150/0ff" alt="5"/></a>
         </div>
 
-        <div id="slidespagination"> 
+        <div id="slidespagination">
+        <!--
+        Placement and style of this doesn't matter. Parent ID doesn't matter. All that matters is image alt of pagination-slides (plside)
+        must match the alt of slide and must be a number!
+        -->
+            <a href="#prev" id="jsCarousel-prev" title="next">PREV</a>
+
             <a href="#0" title="0"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/f00" alt="0"/></a>
             <a href="#1" title="1"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/0f0" alt="1"/></a>
             <a href="#2" title="2"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/00f" alt="2"/></a>
             <a href="#3" title="3"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/ff0" alt="3"/></a>
             <a href="#4" title="4"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/f0f" alt="4"/></a>
             <a href="#5" title="5"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/0ff" alt="5"/></a>
+            
+            <a href="#next" id="jsCarousel-next" title="next">NEXT</a>
+            
         </div>
     </article>
     </div>
