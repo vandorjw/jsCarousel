@@ -3,28 +3,38 @@
 <head>
 <meta charset="utf-8">
     <title>jsCarousel</title>
-    <link rel="stylesheet" href="css/jsCarousel.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
     <script type="text/javascript" src="js/jsCarousel-0.1.js"></script>
 </head>
 
 <body>
 
 <div id="slidescontainer">
-    <a href="#0" title="0"><img class="jsCarousel-slide" src="http://placehold.it/350x150/f00" /></a>
-    <a href="#1" title="1"><img class="jsCarousel-slide" src="http://placehold.it/350x150/0f0" /></a>
-    <a href="#2" title="2"><img class="jsCarousel-slide" src="http://placehold.it/350x150/00f" /></a>
-    <a href="#3" title="3"><img class="jsCarousel-slide" src="http://placehold.it/350x150/ff0" /></a>
-    <a href="#4" title="4"><img class="jsCarousel-slide" src="http://placehold.it/350x150/f0f" /></a>
-    <a href="#5" title="5"><img class="jsCarousel-slide" src="http://placehold.it/350x150/0ff" /></a>
+    <img class="jsCarousel-slide" src="img/350x150/f00" alt="0"/>
+    <img class="jsCarousel-slide" src="img/350x150/0f0" alt="1"/>
+    <img class="jsCarousel-slide" src="img/350x150/00f" alt="2"/>
+    <img class="jsCarousel-slide" src="img/350x150/ff0" alt="3"/>
+    <img class="jsCarousel-slide" src="img/350x150/f0f" alt="4"/>
+    <img class="jsCarousel-slide" src="img/350x150/0ff" alt="5"/>
+    <img class="jsCarousel-slide" src="img/350x150/000" alt="6"/>
+    <img class="jsCarousel-slide" src="img/350x150/fff" alt="7"/>
 </div>
 
-<div id="slidespagination"> 
-    <a href="#0" title="0"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/f00" /></a>
-    <a href="#1" title="1"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/0f0" /></a>
-    <a href="#2" title="2"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/00f" /></a>
-    <a href="#3" title="3"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/ff0" /></a>
-    <a href="#4" title="4"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/f0f" /></a>
-    <a href="#5" title="5"><img class="jsCarousel-pslide" src="http://placehold.it/50x50/0ff" /></a>
+<div id="slidespagination">
+<!--
+Placement and style of this doesn't matter. Parent ID doesn't matter. All that matters is image alt of pagination-slides (plside)
+must match the alt of slide and must be a number! There is even the option to only show a partial list. Just make sure to match the alt.
+-->
+    <img id="jsCarousel-prev" src="img/prev.png" alt="&lt;" />
+    <img class="jsCarousel-pslide" src="img/50x50/f00" alt="0"/>
+    <img class="jsCarousel-pslide" src="img/50x50/0f0" alt="1"/>
+    <img class="jsCarousel-pslide" src="img/50x50/00f" alt="2"/>
+    <img class="jsCarousel-pslide" src="img/50x50/ff0" alt="3"/>
+    <img class="jsCarousel-pslide" src="img/50x50/f0f" alt="4"/>
+    <img class="jsCarousel-pslide" src="img/50x50/0ff" alt="5"/>
+    <img class="jsCarousel-pslide" src="img/50x50/000" alt="6"/>
+    <img class="jsCarousel-pslide" src="img/50x50/fff" alt="7"/>
+    <img id="jsCarousel-next" src="img/next.png" alt="&gt;" />
 </div>
 
 </body>
