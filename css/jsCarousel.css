@@ -390,7 +390,9 @@ a.go:after{
 }
 
 .jsCarousel-pslide{
-/* make into circles */ 
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
 }
 
 
@@ -398,6 +400,7 @@ a.go:after{
     padding:5px 0 0 0;
     width:100%;
     text-align:center;
+    background: rgba(200,200,200,05);
 }
 #prev_slide {
     float:left;
