@@ -17,6 +17,8 @@ window.onload = function() {
             var directionOfRotarion = 1, // 1 count-up, 0 count-down
                 intervalTime = 3500, // time in microseconds
                 slides = document.getElementsByClassName('jsCarousel-slide'),
+                containerSlides = document.getElementById('pslidescontainer'),
+                containerPSlides = document.getElementById('pslidescontainer'),
                 ns = slides.length,
                 displayQueue = {
                     prev: 0, // stores slide ids.
@@ -76,6 +78,9 @@ window.onload = function() {
                     for (i = 0; i < ns; i = i + 1) {
                         slides[i].style.display = "none";
                     }
+
+                    containerPSlides.style.display = "block";
+                    containerSlides.style.display = "block";
                     updateDisplayQueue();
                     showSlides();
                 },

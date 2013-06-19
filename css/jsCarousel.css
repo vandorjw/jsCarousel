@@ -377,13 +377,8 @@ a.go:after{
     top:-4px;
 }
 
-#slidescontainer {
-    height:auto;
-    padding:0 10px;
-    margin:0 auto;
-    text-align:center;
-}
-#slidespagination {
+#slidescontainer,
+#pslidescontainer {
     height:auto;
     padding:0 10px;
     margin:0 auto;
